@@ -5,23 +5,31 @@ const obj1 = {
 }
 const obj2 = {
   name: 'Bob',
-  jobTitle: 'carpenter' 
+  jobTitle: 'carpenter', 
+  boss: 'John'
 }
 const obj3 = {
   name: 'Jim',
-  jobTitle: 'foreman' 
+  jobTitle: 'foreman', 
+  boss: 'John'
 }
 const obj4 = {
   name: 'Chris',
-  jobTitle: 'builder' 
+  jobTitle: 'builder',
+  boss: 'John'
 }
 const obj5 = {
   name: 'James',
-  jobTitle: 'manager' 
+  jobTitle: 'manager', 
+  boss: 'John'
 }
 
 const array1 = [obj1, obj2, obj3, obj4, obj5];
 
 for (const obj of array1) {
-console.log(obj.jobTitle, obj.name);
+  if (!('boss' in obj)) {
+    console.log(`${obj.jobTitle} ${obj.name} doesn't report to anybody.`);
+  } else {
+    console.log(`${obj.jobTitle} ${obj.name} reports to ${obj.boss}.`);
+  }
 }
